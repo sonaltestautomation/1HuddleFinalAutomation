@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+	<configuration>
+		<!-- report theme -->
+		<!-- standard, dark -->
+		<theme>standard</theme>
+
+		<!-- viewstyle -->
+		<!-- alt-view -->
+		<viewstyle>alt-view</viewstyle>
+
+		<!-- converts nodes into toggles -->
+		<!-- true, false -->
+		<nodesAsToggles>true</nodesAsToggles>
+
+		<!-- converts nodes into accordion -->
+		<!-- true, false -->
+		<nodesAsAccordion>true</nodesAsAccordion>
+
+		<!-- document encoding -->
+		<!-- defaults to UTF-8 -->
+		<encoding>UTF-8</encoding>
+
+		<!-- offline report -->
+		<enableOfflineMode>false</enableOfflineMode>
+
+		<!-- enable or disable timeline on dashboard -->
+		<enableTimeline>true</enableTimeline>
+
+		<!-- protocol for script and stylesheets -->
+		<!-- defaults to https -->
+		<protocol>https</protocol>
+
+		<!-- title of the document -->
+		<documentTitle>1huddle Framework</documentTitle>
+
+		<!-- report name - displayed at top-nav -->
+		<reportName>
+		
+		<![CDATA[
+            <img src='https://stg-admin.1huddle.co/assets/img/header-pattern.svg' />
+            <img src='https://stg-admin.1huddle.co/assets/img/1huddle_tm.png' />
+            
+
+            
+        ]]>  
+		
+		</reportName>
+
+		<!-- timestamp format -->
+		<timeStampFormat>MM/dd/yyyy, HH:mm:ss</timeStampFormat>
+
+		<!-- custom javascript -->
+		<scripts>
+            <![CDATA[
+		   
+
+		   $(document).ready(function() {
+                   $('input:text').attr('placeholder','Enter Feature Name...');
+	           $('div[alt="Search Tests"]').attr('title','Enter Feature Name');
+                   
+                   $('#charts-row').append($('.col.s2'));
+                   $('.subview-left').prepend('<div style="width:300px;height:35px;color:black;font-weight: bold;background:#3856d1;padding: 0.1px 110px;">Features</div>');  
+	           $('#dashboard-view > div > h5').text('Timeline And Environment');
+                  let children= document.querySelector("#charts-row > div:nth-child(4)>div").childNodes;
+			children[0].nodeValue = 'Total Features';
+		  let children1= document.querySelector("#charts-row > div:nth-child(5)>div").childNodes;
+			children1[0].nodeValue = 'Total Scenarios';
+	         let children2= document.querySelector("#charts-row > div:nth-child(6)>div").childNodes;
+			children2[0].nodeValue = 'Total Steps';
+ 		let children3= document.querySelector("#charts-row > div:nth-child(7)>div").childNodes;
+			children3[0].nodeValue = 'Start Time';
+                let children4= document.querySelector("#charts-row > div:nth-child(8)>div").childNodes;
+			children4[0].nodeValue = 'End Time';
+	        $('#exception-view > div.subview-left.left > div:nth-child(1)').text('Errors');
+                
+
+		
+
+                  
+                  
+
+		
+                     
+
+                  
+
+            
+
+
+		  
+
+            });
+		]]>
+            
+            
+        </scripts>
+        
+        
+        
+
+		<!-- custom styles -->
+		<styles>
+        <![CDATA[
+            .reportName { padding-left: 50px; } 
+            .report-name > img { float: left;height: 100%;margin-left: 5px;margin-top: 0px;width: auto; }
+           
+           #charts-row .card-panel { border-top: 10px solid #3856d1;border-bottom: 10px solid #3856d1;border-right: 10px solid #3856d1;height: 200px;}
+	    .scenario {border: 5px solid #3856d1;padding: 15px 20px 0;margin-top: 20px;}
+           body{font-family: 'Source Sans Pro';font-size: 20px;}
+	    h5{font-size: 1.1rem;line-height: 100%;margin: 0.82rem 0 0.656rem 0;}
+	    h5 {font-weight: bold;line-height: 1.1;}
+	    .row .col.l4 {width: 33%;margin-left: auto;left: auto;right: auto;}
+	   .chip i.material-icons{cursor: pointer;float: left;font-size: 25px;line-height: 32px;padding-left: 20px;}
+	   .node .status > i{font-size: 1.5rem;margin-right: 1rem;vertical-align: middle;}
+           .scenario-name {font-size: 1.2rem;font-weight: 500;}
+	   ul.steps{ font-size: 0.9rem;padding-left: 40px;list-style-type: none;}
+	   #test-collection{margin-top: 8px;padding-left: 6px;}
+           .col.s12.m4.l4.np-h{border-left: 10px solid #3856d1;margin-top: 8px;margin-left: 2px;}
+           .subview-left, .subview-right {display: block;overflow-y: auto;overflow-x: hidden;padding: 0 22px;}
+           #test-collection li.active, #category-collection li.active, #exception-collection li.active, #author-collection li.active
+{
+    background: #f7f7f7;
+    font-weight: 600;
+    border-top: 3px solid #3856d1;
+    border-bottom: 3px solid #3856d1;
+    border-right: 3px solid #3856d1;
+    border-left: 3px solid #3856d1;
+}
+.col.s12.m4.l4.np-h {
+    
+    border-left: 10px solid #3856d1;
+    
+    
+    margin-top: 15px;
+    margin-left: 4px;
+}
+.row .col.s2 {
+    width: 14%;
+    height: 140px;
+    margin-left: 29px;
+    
+    right: auto;
+    /* border-left: 10px solid #5572b1; */
+}
+#charts-row .card-panel.r {
+    border-top: 10px solid #3856d1;
+    border-bottom: 10px solid #3856d1;
+    border-right: 10px solid #3856d1;
+    border-left: 10px solid #3856d1;
+    height: 110px;
+    font-size: 17px;
+    /* display: none; */
+    /* display: none; */
+}
+.row .col.s4 {
+    width: 33.3333333333%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+    
+}
+.row .col {
+    float: left;
+    box-sizing: border-box;
+    padding: 0 0.30rem;
+    min-height: 1px;
+}
+#dashboard-view .card-panel {
+    margin-bottom: 0px !important;
+}
+.hide-overflow {overflow: scroll;}
+.side-nav {top: 69.5px;}
+    
+nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i{line-height: 60px;}
+nav .brand-logo {
+    font-size: 12px;
+    padding-left: 15px;
+    margin-right: 20px;
+    font-weight: 600;
+    width: 70px;
+    height: 50px;
+    padding-top: 1px;
+    display: none;
+}
+nav .nav-wrapper {
+    position: relative;
+    height: 140%;
+    background: #3856d1;
+}
+body > nav > div > span.report-name > img:nth-child(1) {
+   
+    float: left;
+    height: 100%;
+    margin-left: 5px;
+    margin-top: 0px;
+    width: auto;
+}
+body > nav > div > span.report-name > img:nth-child(2) {
+    float: left;
+    height: 100%;
+    margin-right: 00px;
+    margin-top: px;
+    width: auto;
+    padding: 15px 10px;
+    /* left: 333334px; */
+    position: absolute;
+    left: 00px;
+}
+
+.card-panel .panel-lead {
+    bottom: 10px;
+    font-size: 15px;
+    position: absolute;
+    right: 15px;
+    font-weight: bolder;
+    color: #3856d1;
+}
+
+.pink-text {
+    color: #3856d1 !important;
+}
+a {
+    color: #64c2d8;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+
+        ]]>
+    </styles>
+		
+		<!-- custom styles -->
+<css>
+    <![CDATA[
+        <!-- I've put my styles here -->
+     ]]>
+</css>`
+		
+	</configuration>
+</extentreports>
